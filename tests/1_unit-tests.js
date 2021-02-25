@@ -105,16 +105,16 @@ suite("Unit Tests", function () {
   suite("Arrays", function () {
     // #11
     test("#isArray, #isNotArray", function () {
-      assert.fail(
+      assert.isArray(
         "isThisAnArray?".split(""),
         "String.prototype.split() returns an Array"
       );
-      assert.fail([1, 2, 3].indexOf(2), "indexOf returns a number.");
+      assert.isNotArray([1, 2, 3].indexOf(2), "indexOf returns a number.");
     });
     // #12
     test("Array #include, #notInclude", function () {
-      assert.fail(winterMonths, "jul", "It's summer in july...");
-      assert.fail(
+      assert.notInclude(winterMonths, "jul", "It's summer in july...");
+      assert.include(
         backendLanguages,
         "javascript",
         "JS is a backend language !!"
@@ -130,9 +130,9 @@ suite("Unit Tests", function () {
   suite("Strings", function () {
     // #13
     test("#isString, #isNotString", function () {
-      assert.fail(Math.sin(Math.PI / 4), "a float is not a string");
-      assert.fail(process.env.PATH, "env vars are strings (or undefined)");
-      assert.fail(JSON.stringify({ type: "object" }), "a JSON is a string");
+      assert.isNotString(Math.sin(Math.PI / 4), "a float is not a string");
+      assert.isString(process.env.PATH, "env vars are strings (or undefined)");
+      assert.isString(JSON.stringify({ type: "object" }), "a JSON is a string");
     });
     // #14
     test("String #include, #notInclude", function () {
